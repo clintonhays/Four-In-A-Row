@@ -24,7 +24,7 @@ class Board {
 	}
 
 	/**
-	 * Draws SCG spaces on board playing-area
+	 * Draws SVG spaces on board playing-area
 	 */
 
 	drawHTMLBoard () {
