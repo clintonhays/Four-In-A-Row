@@ -20,6 +20,7 @@ beginGameButton.addEventListener('click', function () {
  * Calls handleKeydown() on game object
  */
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', function (e) {
 	game.handleKeydown(e);
+	console.log('working');
 });

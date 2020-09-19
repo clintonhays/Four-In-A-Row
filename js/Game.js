@@ -43,14 +43,35 @@ class Game {
 	handleKeydown (e) {
 		if (this.ready) {
 			if (e.key === 'ArrowLeft') {
-				// Move token left
+				this.activePlayer.activeToken.moveLeft();
+				console.log(e.key);
 			}
 			else if (e.key === 'ArrowRight') {
-				// Move token right
+				this.activePlayer.activeToken.moveRight(this.board.columns);
+				console.log(e.key);
 			}
 			else if (e.key === 'ArrowDown') {
-				// Drop token
+				this.playToken();
+				console.log(e.key);
 			}
+		}
+	}
+
+	playToken () {
+		let spaces = this.board.spaces;
+		let activeToken = this.activePlayer.activeToken;
+		let targetColumn = spaces[activeToken.columnLocation];
+		let targetSpace = null;
+
+		for (let space of targetColumn) {
+			if (space.token === null) {
+				targetSpace = space;
+			}
+		}
+
+		if (targetSpace !== null) {
+			game.ready = false;
+			activeToken.drop(targetSpace);
 		}
 	}
 }
