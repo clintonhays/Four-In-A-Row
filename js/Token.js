@@ -3,6 +3,7 @@ class Token {
 		this.owner = owner;
 		this.id = `token-${index}-${owner.id}`;
 		this.dropped = false;
+		this.columnLocation = 0;
 	}
 
 	drawHTMLToken () {

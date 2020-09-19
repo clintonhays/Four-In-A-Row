@@ -4,7 +4,8 @@ const beginGameButton = document.getElementById('begin-game');
 const playArea = document.getElementById('play-area');
 
 /**
- * Listens for click on `#begin-game` and calls startGame() on game object
+ * Listens for click on `#begin-game`
+ * Calls startGame() on game object
  */
 
 beginGameButton.addEventListener('click', function () {
@@ -12,4 +13,13 @@ beginGameButton.addEventListener('click', function () {
 
 	this.style.display = 'none';
 	playArea.style.opacity = '1';
+});
+
+/**
+ * Listens for keyDown to move and drop token
+ * Calls handleKeydown() on game object
+ */
+
+document.addEventListener('keydown', (e) => {
+	game.handleKeydown(e);
 });
